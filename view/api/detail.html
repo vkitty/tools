@@ -1,0 +1,77 @@
+{{include './../public/header'}}
+{{include './detail.less'}}
+
+<div class="page-api-detail">
+
+    <div class="panel panel-default mt20">
+        <div class="panel-heading">[{{urlRow.method}}] {{if urlRow.https}}<span style="color:#0a9c67;">https</span>://{{else}}http://{{/if}}{{urlRow.url}}
+            {{if urlRow.checkPower}}
+            <a href="/api/edit?id={{id}}" class="fa edit fa-pencil-square-o J_lastHref"></a>
+            {{/if}}
+        </div>
+        <div class="panel-body">
+            <div id="desc">{{urlRow.desc}}</div>
+        </div>
+    </div>
+
+
+    <div class="panel panel-default mt20">
+        <div class="panel-heading">get数据
+            {{if urlRow.checkPower}}
+            <a href="/api/editparam?id={{id}}&type=query" class="fa edit fa-pencil-square-o J_lastHref"></a>
+            {{/if}}
+        </div>
+        <div class="panel-body">
+            {{if history}}
+            <div id="viewQuery"></div>
+            {{else}}
+            &nbsp
+            {{/if}}
+        </div>
+    </div>
+
+    {{if urlRow.method==='POST'}}
+    <div class="panel panel-default mt20">
+        <div class="panel-heading">post数据
+            {{if urlRow.checkPower}}
+            <a href="/api/editparam?id={{id}}&type=post" class="fa edit fa-pencil-square-o J_lastHref"></a>
+            {{/if}}
+        </div>
+        <div class="panel-body">
+            {{if history}}
+            <div id="viewPost"></div>
+            {{else}}
+            &nbsp
+            {{/if}}
+        </div>
+    </div>
+    {{/if}}
+
+
+    <div class="panel panel-default mt20">
+        <div class="panel-heading">响应
+            {{if urlRow.checkPower}}
+            <a href="/api/editparam?id={{id}}" class="fa edit fa-pencil-square-o J_lastHref"></a>
+            {{/if}}
+        </div>
+        <div class="panel-body">
+            {{if history}}
+                <div id="viewContent">
+                </div>
+            {{else}}
+            &nbsp
+            {{/if}}
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    _g.history = '{{history}}' || '{}';
+</script>
+
+{{include './../public/include'}}
+{{include './jsonview/jquery.jsonview.less'}}
+{{include './jsonview/jquery.jsonview.js'}}
+{{include './detail.js'}}
+{{include './../public/footer'}}

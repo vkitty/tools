@@ -1,0 +1,12 @@
+{
+  "type":"mysql",
+  "host": "127.0.0.1",
+  "port": 3306,
+  "database": "ii-qianniuhua",
+  "user": "root",
+  "password": "abc123456",
+  "prefix": "",
+  "charset": "utf8_general_ci",
+  "connectTimeout":10000,
+  "debug":false
+}

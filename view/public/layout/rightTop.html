@@ -1,0 +1,16 @@
+{{include './rightTop.less'}}
+
+<nav class="row right-top">
+    <form method="get" class="row right-top" action="/api/index">
+    <div class="box">
+        <button type="submit" class="btn btn-primary">搜索</button>
+        <select class="form-control category J_select-default" name="search_app_id" data-value="{{search_app_id}}">
+            <option value="0">类目选择</option>
+            {{each search_category as cate}}
+            <option value="{{cate.id}}">{{cate.name}}</option>
+            {{/each}}
+        </select>
+        <input type="text" name="search_keyword" class="form-control search" placeholder="search" value="{{search_keyword}}"/>
+    </div>
+    </form>
+</nav>

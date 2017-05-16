@@ -1,0 +1,26 @@
+{{include './../public/header'}}
+{{include './index.less'}}
+
+<div class="page-minify page">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <textarea class="form-control" rows="10" id="minifyinput"></textarea>
+        </div>
+        <div class="panel-footer">
+            <button class="btn btn-primary J_minify" data-type="1">js压缩</button>
+            <button class="btn btn-primary J_minify" data-type="2">css压缩</button>
+        </div>
+    </div>
+
+
+    <div class="panel panel-default" style="color: #000;">
+        <div class="panel-body" id="viewer">
+            function test(text){test(text)};<br/>
+            test("hello word");</div>
+    </div>
+
+</div>
+
+{{include './../public/include'}}
+{{include './index.js'}}
+{{include './../public/footer'}}

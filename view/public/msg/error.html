@@ -1,0 +1,18 @@
+{{include './../headersimple'}}
+{{include './index.less'}}
+
+<div class="page-error">
+    <div class="container">
+        <div class="alert alert-danger alert-danger fade in text-center">
+            {{data.status.status_reason}}
+        </div>
+    </div>
+</div>
+
+
+{{include './../include'}}
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/select2/4.0.2-rc.1/css/select2.css"/>
+{{include './index.js'}}
+{{include './../footer'}}

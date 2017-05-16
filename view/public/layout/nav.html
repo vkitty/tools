@@ -1,0 +1,64 @@
+{{include './nav.less'}}
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">
+                Brank
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+            <ul class="nav navbar-nav" id="nav">
+                <li><a href="/jsonview" title="jsonview json编辑器">jsonview</a></li>
+                <li><a href="/base64" title="base64编码解码\base64解码">base64编码</a></li>
+                <li><a href="/urlencode" title="url编码解码\url解码">urlencode</a></li>
+                <li><a href="/jsontoget" title="json转get\get转json">json转get</a></li>
+                <li><a href="/md5" title="md5加密">md5加密</a></li>
+                <li><a href="/minify" title="js压缩\css压缩">js/css压缩</a></li>
+                <li><a href="/erweima" title="生成二维码">生成二维码</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<script type="text/javascript">
+    (function () {
+        var pathName = '{{cate}}' || window.location.pathname || '/';
+
+        if (!/\/$/.test(pathName)) {
+            pathName = pathName + '/';
+        }
+
+        pathName = pathName.replace(/\/$/, '');
+
+        var nodes = document.querySelectorAll('#nav li a'),
+                selected =false;
+        for(var i=0;i<nodes.length;i++){
+            var href = nodes[i].getAttribute('href');
+            if(href){
+                href = pathName.replace(/\/$/,'');
+            }
+            if(nodes[i].getAttribute('href')===pathName){
+                var parentNode = nodes[i].parentNode;
+                parentNode.className=parentNode.className+' active';
+                selected = true;
+            }
+        }
+
+        if(!selected && pathName && pathName.split('/').length && pathName.split('/')[1]){
+            pathName = '/'+pathName.split('/')[1];
+            for(i=0;i<nodes.length;i++){
+                var href = nodes[i].getAttribute('href');
+                if(href){
+                    href = pathName.replace(/\/$/,'');
+                }
+                if(nodes[i].getAttribute('href')===pathName){
+                    var parentNode = nodes[i].parentNode;
+                    parentNode.className=parentNode.className+' active';
+                }
+            }
+        }
+
+    }())
+</script>

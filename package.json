@@ -1,0 +1,36 @@
+{
+  "name": "api-center",
+  "version": "1.0.0",
+  "description": "api管理中心",
+  "main": "buildfile.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "koa-router": "5.4.0",
+    "art-template":"3.0.3",
+    "mysql":"2.10.2",
+    "co":"4.6.0",
+    "koa":"1.2.0",
+    "request":"2.67.0",
+    "exit":"0.1.2",
+    "less":"2.5.3",
+    "dateformat":"1.0.12",
+    "uglify-js":"2.6.2",
+    "uglifycss":"0.0.20",
+    "favicons":"4.7.1"
+  },
+
+  "scripts": {
+    "start": "pm2 start development.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.vdian.net/hz-front/api-center.git"
+  },
+  "keywords": [
+    "api"
+  ],
+  "author": "fudongguang",
+  "license": "ISC"
+}

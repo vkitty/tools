@@ -1,0 +1,21 @@
+{{include './../public/header'}}
+{{include './index.less'}}
+
+<div class="page-erweima page">
+    <textarea class="form-control" rows="10" id="erweimainput"></textarea>
+
+    <div class="panel panel-default mt20" style="color: #000;">
+        <div class="panel-body" id="viewer">http://qianniuhua.me</div>
+    </div>
+
+    <div class="panel panel-default mt20" style="color: #000;">
+        <div class="panel-body">强烈建议使用chrome插件:<a href="http://qianniuhua.com/erweima">HTML5高清二维码生成器</a> </div>
+    </div>
+
+</div>
+
+{{include './../public/include'}}
+{{include './lib/qrcode.js'}}
+{{include './lib/jquery.qrcode.js'}}
+{{include './index.js'}}
+{{include './../public/footer'}}
