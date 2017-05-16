@@ -1,4 +1,19 @@
+<script type="text/javascript">
+    (function(){
+        var notice = Kub.core.getQuerystring().notice;
+        if(notice){
+            notice = decodeURIComponent(notice);
+            var el = document.createElement('div');
+            el.className = 'updateNotice';
+            el.innerHTML=notice;
+            document.body.appendChild(el);
 
+            setTimeout(function(){
+                el.parentNode.removeChild(el);
+            },2000)
+        }
+    }())
+</script>
 </div>
 </body>
 </html>
