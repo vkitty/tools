@@ -2,15 +2,16 @@
     (function(){
         var notice = Kub.core.getQuerystring().notice;
         if(notice){
-            notice = decodeURIComponent(notice);
             var el = document.createElement('div');
             el.className = 'updateNotice';
-            el.innerHTML=notice;
+            el.innerHTML='chrome插件jsonview更新成功,增加了还原功能和在线格式化功能,欢迎尝试.<br/>8s后关闭<br/>' +
+                    '<img src="https://si.geilicdn.com/hz_img_12540000015c11d138cf0a026860_649_289_unadjust.png" style="width: 400px;margin-top: 20px;"/>';
             document.body.appendChild(el);
 
             setTimeout(function(){
+                window.location.href="/jsonview";
                 el.parentNode.removeChild(el);
-            },4000)
+            },8000)
         }
     }())
 </script>
